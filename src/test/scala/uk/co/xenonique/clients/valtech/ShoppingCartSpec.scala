@@ -30,12 +30,12 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   "Discounter" should "should handle two oranges for one offer" in {
     val items = List(Orange, Orange)
-    new TwoOrangesDiscounter().calculateDiscountPrice(items)
+    new BuyTwoApplesGetOneFreeDiscounter().calculateDiscountPrice(items)
   }
 
   "Shopping cart" should "should handle two oranges for one offer" in {
     new ShoppingCart(List()).price() should be === 0.0
-    new ShoppingCart(List(Orange, Orange), List(new TwoOrangesDiscounter())).price() should be === 0.60
+    new ShoppingCart(List(Orange, Orange), List(new BuyTwoApplesGetOneFreeDiscounter())).price() should be === 0.60
   }
 }
 

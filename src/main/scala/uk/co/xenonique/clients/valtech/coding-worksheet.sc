@@ -18,9 +18,9 @@ val n = List(Orange,Apple,Orange,Orange).filter( x => x.equals(Orange)).size
 
 
 val items = List(Orange, Orange)
-new TwoOrangesDiscounter().calculateDiscountPrice(items)
+new BuyTwoApplesGetOneFreeDiscounter().calculateDiscountPrice(items)
 
-List(new TwoOrangesDiscounter(), new TwoOrangesDiscounter ()).map( d => d.calculateDiscountPrice(items)).sum
+List(new BuyTwoApplesGetOneFreeDiscounter(), new BuyTwoApplesGetOneFreeDiscounter ()).map(d => d.calculateDiscountPrice(items)).sum
 
 
 
