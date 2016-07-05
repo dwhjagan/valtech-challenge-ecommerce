@@ -23,6 +23,9 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     new ShoppingCart( List() ).price() should be === 0.0
     new ShoppingCart( List( Orange) ).price() should be === 0.60
     new ShoppingCart( List( Apple) ).price() should be === 0.25
+    new ShoppingCart( List( Orange, Orange, Apple) ).price() should be === 1.45
+    new ShoppingCart( List( Orange, Apple, Orange) ).price() should be === 1.45
+    new ShoppingCart( List( Apple, Orange, Orange, Apple) ).price() should be === 1.70
   }
 
 }
