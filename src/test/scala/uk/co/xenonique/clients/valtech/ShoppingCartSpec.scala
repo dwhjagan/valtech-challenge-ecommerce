@@ -1,3 +1,23 @@
+/*******************************************************************************
+ * DO NOT ALTER OR REMOVE COPYRIGHT NOTICES OR THIS HEADER.
+ *
+ * Copyright (c) 2016 by Peter Pilgrim, Milton Keynes, UK for  XeNoNiQUe UK
+ * PILGRIM ENGINEERING ARCHITECTURE TECHNOLOGY UK LTD
+ *
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the GNU GPL v3.0
+ * which accompanies this distribution, and is available at:
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ *
+ * Developers:
+ * Peter Pilgrim -- design, development and implementation
+ *               -- Blog: http://www.xenonique.co.uk/blog/
+ *               -- Twitter: @peter_pilgrim
+ *
+ * Contributors:
+ *
+ *******************************************************************************/
+
 package uk.co.xenonique.clients.valtech
 
 import org.junit.runner.RunWith
@@ -56,5 +76,18 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
   }
 
 
+  "Shopping cart" should "should handle mixed discount offers" in {
+
+    val discounters = List(new BuyThreeOrangesForTwoDiscounter(), new BuyTwoApplesGetOneFreeDiscounter)
+
+    new ShoppingCart(List(), discounters).price() should be === 0.0
+    new ShoppingCart(List(Orange), discounters).price() should be === 0.60
+    new ShoppingCart(List(Orange, Apple), discounters).price() should be === 0.85
+    new ShoppingCart(List(Orange, Apple, Orange), discounters).price() should be === 1.45
+    new ShoppingCart(List(Orange, Apple, Orange, Apple), discounters).price() should be === 1.45
+    new ShoppingCart(List(Orange, Apple, Apple, Orange, Apple), discounters).price() should be === 1.70
+    new ShoppingCart(List(Orange, Apple, Orange, Apple, Orange, Apple), discounters).price() should be === 1.70
+    new ShoppingCart(List(Orange, Apple, Orange, Apple, Orange, Apple, Orange), discounters).price() should be === 2.30
+  }
 }
 
