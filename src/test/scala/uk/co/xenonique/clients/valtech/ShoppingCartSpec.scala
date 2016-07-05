@@ -12,9 +12,8 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
     val list = List( Orange, Apple, Orange, Apple)
 
-    list.isEmpty should be === true
+    list.isEmpty should be === false
   }
-
 
 }
 
