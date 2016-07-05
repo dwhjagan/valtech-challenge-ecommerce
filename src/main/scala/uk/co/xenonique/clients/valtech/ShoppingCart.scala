@@ -8,6 +8,6 @@ package uk.co.xenonique.clients.valtech
 
 class ShoppingCart(val items: List[CartItem]) {
 
-  def price(): BigDecimal = 0.0
+  def price(): BigDecimal = items.map( x => x.price).sum
 
 }

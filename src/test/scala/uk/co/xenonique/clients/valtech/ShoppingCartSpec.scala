@@ -20,10 +20,9 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   "Shopping cart" should "should be price items in a list" in {
 
-    val items = List[CartItem]( Apple )
-
-    val cart = new ShoppingCart( items )
-    cart.price() should be === 0.85F
+    new ShoppingCart( List() ).price() should be === 0.0
+    new ShoppingCart( List( Orange) ).price() should be === 0.60
+    new ShoppingCart( List( Apple) ).price() should be === 0.25
   }
 
 }
