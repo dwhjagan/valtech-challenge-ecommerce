@@ -6,8 +6,8 @@ package uk.co.xenonique.clients.valtech
   * @author Peter Pilgrim (peter)
   */
 
-class ShoppingCart(val items: List[(String,Float) => CartItem with Product with Serializable]) {
+class ShoppingCart(val items: List[CartItem]) {
 
-  def price(): Float = 0.0F;
+  def price(): BigDecimal = 0.0
 
 }

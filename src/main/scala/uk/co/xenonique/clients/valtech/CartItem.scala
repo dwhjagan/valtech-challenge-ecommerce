@@ -6,14 +6,9 @@ package uk.co.xenonique.clients.valtech
   * @author Peter Pilgrim (peter)
   */
 
-trait CartItem {
-  val name: String;
-  val price: Float;
+class CartItem( val name: String, var price: BigDecimal)
+
+object CartItem {
+  val Orange = new CartItem( "Orange", 0.60)
+  val Apple = new CartItem("Apple", 0.25)
 }
-
-case class Apple( override val name: String = "Apple",
-                  override val price: Float = 0.60F) extends CartItem
-
-case class Orange( override val name: String = "Orange",
-                   override val price: Float = 0.25F) extends CartItem
-

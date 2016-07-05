@@ -7,6 +7,8 @@ import org.scalatest.junit.JUnitRunner
 
 import scala.collection.immutable.List
 
+import CartItem._
+
 @RunWith(classOf[JUnitRunner])
 class ShoppingCartSpec extends FlatSpec with Matchers {
   "CartItem" should "should be buildable in a list" in {
@@ -18,7 +20,8 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
 
   "Shopping cart" should "should be price items in a list" in {
 
-    val items = List( Orange, Apple)
+    val items = List[CartItem]( Apple )
+
     val cart = new ShoppingCart( items )
     cart.price() should be === 0.85F
   }
