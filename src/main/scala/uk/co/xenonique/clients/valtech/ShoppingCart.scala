@@ -27,9 +27,9 @@ trait Discounter {
 
 class BuyTwoApplesGetOneFreeDiscounter extends Discounter {
   def calculateDiscountPrice(items: List[CartItem]): BigDecimal = {
-    val n = items.filter( x => x.equals(Orange)).size
-    if ( n % 2 == 0)
-      n / 2 * Orange.price
+    val n = items.filter( x => x.equals(Apple)).size
+    if ( n >= 2 )
+      n / 2 * Apple.price
     else
       0.0
   }
