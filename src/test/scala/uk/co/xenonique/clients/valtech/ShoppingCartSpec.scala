@@ -5,6 +5,7 @@ import org.scalatest.{FlatSpec, Matchers}
 import org.scalatest.junit.JUnitRunner
 
 
+import scala.collection.immutable.List
 
 @RunWith(classOf[JUnitRunner])
 class ShoppingCartSpec extends FlatSpec with Matchers {
@@ -13,6 +14,13 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     val list = List( Orange, Apple, Orange, Apple)
 
     list.isEmpty should be === false
+  }
+
+  "Shopping cart" should "should be price items in a list" in {
+
+    val items = List( Orange, Apple)
+    val cart = new ShoppingCart( items )
+    cart.price() should be === 0.85F
   }
 
 }
