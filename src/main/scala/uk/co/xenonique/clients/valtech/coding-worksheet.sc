@@ -1,3 +1,5 @@
+import java.io.Serializable
+
 import uk.co.xenonique.clients.valtech._
 import uk.co.xenonique.clients.valtech.CartItem._
 
@@ -26,6 +28,22 @@ new BuyTwoApplesGetOneFreeDiscounter().calculateDiscountPrice(items)
 List(new BuyTwoApplesGetOneFreeDiscounter(), new BuyTwoApplesGetOneFreeDiscounter ()).map(d => d.calculateDiscountPrice(items)).sum
 
 
+// Bloody hell, I could have used case classes after all!
+
+sealed trait ProdItem extends Product with Serializable{
+  val name: String;
+  val price: BigDecimal;
+}
+
+final case class Foo( override val name: String = "Foo",
+                  override val price: BigDecimal = 0.50) extends ProdItem
+
+final case class Bar( override val name: String = "Bar",
+                   override val price: BigDecimal = 0.35) extends ProdItem
+
+val products = List( Foo(), Bar(), Foo(), Bar())
+
+val totalPrice = products.map( x => x.price).sum
 
 
 
