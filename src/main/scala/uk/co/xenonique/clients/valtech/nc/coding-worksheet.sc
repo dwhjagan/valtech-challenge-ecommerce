@@ -1,7 +1,7 @@
 import java.io.Serializable
 
-import uk.co.xenonique.clients.valtech._
-import uk.co.xenonique.clients.valtech.CartItem._
+import uk.co.xenonique.clients.valtech.nc.{BuyTwoApplesGetOneFreeDiscounter, CartItem, ShoppingCart}
+import uk.co.xenonique.clients.valtech.nc.CartItem._
 
 import scala.collection.immutable.List
 
@@ -44,11 +44,4 @@ final case class Bar( override val name: String = "Bar",
 val products = List( Foo(), Bar(), Foo(), Bar())
 
 val totalPrice = products.map( x => x.price).sum
-
-
-
-
-
-
-
 

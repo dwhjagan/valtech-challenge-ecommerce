@@ -18,16 +18,11 @@
  *
  *******************************************************************************/
 
-package uk.co.xenonique.clients.valtech
+package uk.co.xenonique.clients.valtech.nc
 
 import org.junit.runner.RunWith
-import org.scalatest.{FlatSpec, Matchers}
 import org.scalatest.junit.JUnitRunner
-
-
-import scala.collection.immutable.List
-
-import CartItem._
+import org.scalatest.{FlatSpec, Matchers}
 
 @RunWith(classOf[JUnitRunner])
 class ShoppingCartSpec extends FlatSpec with Matchers {

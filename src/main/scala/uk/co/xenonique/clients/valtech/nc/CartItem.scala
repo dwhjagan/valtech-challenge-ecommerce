@@ -18,7 +18,7 @@
  *
  *******************************************************************************/
 
-package uk.co.xenonique.clients.valtech
+package uk.co.xenonique.clients.valtech.nc
 
 /**
   * The type CartItem

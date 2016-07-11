@@ -18,9 +18,9 @@
  *
  *******************************************************************************/
 
-package uk.co.xenonique.clients.valtech
+package uk.co.xenonique.clients.valtech.nc
 
-import CartItem._
+import uk.co.xenonique.clients.valtech.nc.CartItem._
 /**
   * The type ShoppingCart
   *
