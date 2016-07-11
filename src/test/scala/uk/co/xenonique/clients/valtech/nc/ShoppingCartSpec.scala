@@ -23,6 +23,7 @@ package uk.co.xenonique.clients.valtech.nc
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
 import org.scalatest.{FlatSpec, Matchers}
+import CartItem._
 
 @RunWith(classOf[JUnitRunner])
 class ShoppingCartSpec extends FlatSpec with Matchers {
