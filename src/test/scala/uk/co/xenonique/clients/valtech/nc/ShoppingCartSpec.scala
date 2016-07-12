@@ -27,14 +27,14 @@ import CartItem._
 
 @RunWith(classOf[JUnitRunner])
 class ShoppingCartSpec extends FlatSpec with Matchers {
-  "CartItem" should "should be buildable in a list" in {
+  "CartItem" should "be buildable from list of object items" in {
 
     val list = List( Orange, Apple, Orange, Apple)
 
     list.isEmpty should be === false
   }
 
-  "Shopping cart" should "should be price items in a list" in {
+  "Shopping cart" should "calculate price items in a list" in {
 
     new ShoppingCart( List() ).price() should be === 0.0
     new ShoppingCart( List( Orange) ).price() should be === 0.60
@@ -44,7 +44,7 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
     new ShoppingCart( List( Apple, Orange, Orange, Apple) ).price() should be === 1.70
   }
 
-  "Shopping cart" should "should handle two apples for one offer" in {
+  "Shopping cart" should "calculate two apples for one offer" in {
 
     val discounters = List(new BuyTwoApplesGetOneFreeDiscounter())
 
@@ -58,7 +58,7 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
   }
 
 
-  "Shopping cart" should "should handle buy 3 oranges for 2 offer" in {
+  "Shopping cart" should "calculate buy 3 oranges for 2 offer" in {
 
     val discounters = List(new BuyThreeOrangesForTwoDiscounter())
 
@@ -72,7 +72,7 @@ class ShoppingCartSpec extends FlatSpec with Matchers {
   }
 
 
-  "Shopping cart" should "should handle mixed discount offers" in {
+  "Shopping cart" should "calculate mixed discount offers" in {
 
     val discounters = List(new BuyThreeOrangesForTwoDiscounter(), new BuyTwoApplesGetOneFreeDiscounter)
 
