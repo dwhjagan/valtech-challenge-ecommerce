@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scala_files=`find . -name "*.scala" -o -name "build.gradle"`
+scala_files=`find . -name "*.scala" -o -name "*.java" -o -name "build.gradle"`
 
 for file in ${scala_files}
 do
